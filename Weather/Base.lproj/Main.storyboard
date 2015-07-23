@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserInfo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-P3-1De">
+                                <rect key="frame" x="268" y="289" width="65" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNC-iz-bOx">
+                                <rect key="frame" x="279" y="374" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="50f-A3-64F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-Ic-lXb">
+                                <rect key="frame" x="279" y="475" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khb-K3-Ztb">
+                                <rect key="frame" x="279" y="547" width="72" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="cbt-Ne-qsM"/>
+                                    <constraint firstAttribute="height" constant="21" id="hFO-XB-2qV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sdY-P3-1De" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0N0-aw-mI5"/>
+                            <constraint firstItem="JNC-iz-bOx" firstAttribute="top" secondItem="sdY-P3-1De" secondAttribute="bottom" constant="63" id="4HK-Te-ke1"/>
+                            <constraint firstItem="sdY-P3-1De" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8ss-k0-3yL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khb-K3-Ztb" secondAttribute="bottom" constant="32" id="AsY-QB-gaB"/>
+                            <constraint firstItem="sdY-P3-1De" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="223" id="Jp6-eF-mBx"/>
+                            <constraint firstItem="khb-K3-Ztb" firstAttribute="top" secondItem="PRl-Ic-lXb" secondAttribute="bottom" constant="51" id="KbE-sj-h7V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sdY-P3-1De" secondAttribute="bottom" id="OKK-De-ivf"/>
+                            <constraint firstItem="khb-K3-Ztb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="279" id="RW8-5f-qTE"/>
+                            <constraint firstItem="PRl-Ic-lXb" firstAttribute="leading" secondItem="JNC-iz-bOx" secondAttribute="leading" id="azQ-MM-rLA"/>
+                            <constraint firstItem="khb-K3-Ztb" firstAttribute="leading" secondItem="PRl-Ic-lXb" secondAttribute="leading" id="crg-Rz-8T0"/>
+                            <constraint firstItem="sdY-P3-1De" firstAttribute="centerX" secondItem="JNC-iz-bOx" secondAttribute="centerX" id="dNF-hL-H8Z"/>
+                            <constraint firstAttribute="bottom" secondItem="JNC-iz-bOx" secondAttribute="bottom" constant="205" id="hlk-Zw-Swt"/>
+                            <constraint firstItem="PRl-Ic-lXb" firstAttribute="trailing" secondItem="JNC-iz-bOx" secondAttribute="trailing" id="khx-OK-J6m"/>
+                            <constraint firstItem="PRl-Ic-lXb" firstAttribute="top" secondItem="JNC-iz-bOx" secondAttribute="bottom" constant="80" id="yLJ-0l-MyF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jp6-eF-mBx"/>
+                                <exclude reference="OKK-De-ivf"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="JNC-iz-bOx" id="2FX-U7-7rk"/>
+                        <outlet property="countryLabel" destination="khb-K3-Ztb" id="OYm-HZ-o5m"/>
+                        <outlet property="stateLabel" destination="PRl-Ic-lXb" id="nrB-aD-18f"/>
+                        <outlet property="textLabel" destination="sdY-P3-1De" id="pto-zV-uyf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="246" y="292"/>
         </scene>
     </scenes>
 </document>
