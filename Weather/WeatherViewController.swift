@@ -14,7 +14,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var rainLabel: UILabel!
+    @IBOutlet weak var rainLabel2: UILabel!
     @IBOutlet weak var desLabel: UILabel!
+    @IBOutlet weak var desLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +71,23 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             rainLabel.text = "No rain found"
         }
         
-        if let description = jsonObject["list"]!!.objectAtIndex(1).objectForKey("weather")?.objectAtIndex(0).objectForKey("description") as? String {
-            desLabel.text = description
+        if let dtTime = jsonObject["list"]!!.objectAtIndex(1).objectForKey("dt_txt") as? String{
+            desLabel.text = dtTime
+            
         }
         
-
+        if let rain2 = jsonObject["list"]!!.objectAtIndex(2).objectForKey("rain")?.objectForKey("3h") as? String {
+            rainLabel2.text = "\(rain2)"
+            
+        }
+        else {
+            rainLabel2.text = "No rain found"
+        }
+        
+        if let dtTime2 = jsonObject["list"]!!.objectAtIndex(2).objectForKey("dt_txt") as? String {
+            desLabel2.text = dtTime2
+        }
+    
 
 }
 }
