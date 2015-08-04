@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var rainLabel: UILabel!
+    @IBOutlet weak var desLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,19 +61,19 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             cityLabel.text =  city
         }
         
+        //Return precipitation volume mm per 3 hours
         if let rain = jsonObject["list"]!!.objectAtIndex(1).objectForKey("rain")?.objectForKey("3h") as? Double {
             rainLabel.text = "\(rain)"
         }
         else {
-            println("No rain found")
+            rainLabel.text = "No rain found"
         }
         
+        if let description = jsonObject["list"]!!.objectAtIndex(1).objectForKey("weather")?.objectAtIndex(0).objectForKey("description") as? String {
+            desLabel.text = description
+        }
         
-    }
-    
-//    func pushNotification (PF : PFObject){
-//        if (rain > 5) {
-//            send pf
-//        }
-//    }
+
+
+}
 }

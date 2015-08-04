@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-S3-N76">
-                                <rect key="frame" x="264" y="290" width="73" height="20.5"/>
+                                <rect key="frame" x="263.5" y="290" width="73" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="cnW-MM-QIj"/>
                                 </constraints>
@@ -26,7 +26,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rainLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88A-H3-2FL">
-                                <rect key="frame" x="265.5" y="366" width="70.5" height="20.5"/>
+                                <rect key="frame" x="261" y="366" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPo-gx-ZhD">
+                                <rect key="frame" x="261" y="450" width="78" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="D52-Li-LSQ"/>
+                                    <constraint firstAttribute="width" constant="78" id="vS5-p1-1oB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,14 +44,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pPo-gx-ZhD" firstAttribute="leading" secondItem="88A-H3-2FL" secondAttribute="leading" id="2T2-jw-Kvs"/>
+                            <constraint firstAttribute="centerX" secondItem="88A-H3-2FL" secondAttribute="centerX" id="41S-jQ-Bms"/>
                             <constraint firstAttribute="centerX" secondItem="88A-H3-2FL" secondAttribute="centerX" id="CeT-JI-gIW"/>
+                            <constraint firstAttribute="centerX" secondItem="pPo-gx-ZhD" secondAttribute="centerX" id="M3W-0Z-aej"/>
+                            <constraint firstItem="pPo-gx-ZhD" firstAttribute="top" secondItem="88A-H3-2FL" secondAttribute="bottom" constant="63" id="NjU-ax-Qxb"/>
                             <constraint firstAttribute="centerY" secondItem="Crp-S3-N76" secondAttribute="centerY" id="VnH-JI-3U1"/>
                             <constraint firstAttribute="centerX" secondItem="Crp-S3-N76" secondAttribute="centerX" id="a38-oy-rM2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pPo-gx-ZhD" secondAttribute="bottom" constant="129" id="faR-d8-Mpo"/>
                             <constraint firstItem="88A-H3-2FL" firstAttribute="top" secondItem="Crp-S3-N76" secondAttribute="bottom" constant="55.5" id="paz-Vv-LcT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="Crp-S3-N76" id="jms-Ba-rCK"/>
+                        <outlet property="desLabel" destination="pPo-gx-ZhD" id="U7b-fK-zcq"/>
                         <outlet property="rainLabel" destination="88A-H3-2FL" id="Vbt-j1-XEj"/>
                     </connections>
                 </viewController>

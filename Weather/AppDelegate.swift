@@ -3,15 +3,13 @@ import Parse
 import Bolts
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
    // var pushQuery: PFQuery = PFInstallation.query()!
 
-    
-    
-  
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     Parse.enableLocalDatastore()
     
