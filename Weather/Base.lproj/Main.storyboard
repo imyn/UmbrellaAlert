@@ -15,72 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cityLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYi-XU-qCb">
-                                <rect key="frame" x="265" y="290" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="rainLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2D1-a5-KBo">
-                                <rect key="frame" x="265" y="369" width="71" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="zE0-m8-byi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="desLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3q-Iw-cd5">
-                                <rect key="frame" x="265" y="414" width="70" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="945-Ph-8py">
-                                <rect key="frame" x="265" y="466" width="75" height="19"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="desLabel2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVn-u6-eM3">
-                                <rect key="frame" x="265" y="510" width="92" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2D1-a5-KBo" secondAttribute="bottom" constant="203" id="1hu-r8-5Y3"/>
-                            <constraint firstItem="945-Ph-8py" firstAttribute="leading" secondItem="2D1-a5-KBo" secondAttribute="leading" id="8sj-cU-8fG"/>
-                            <constraint firstAttribute="centerX" secondItem="kYi-XU-qCb" secondAttribute="centerX" id="9hg-D8-cHR"/>
-                            <constraint firstItem="2D1-a5-KBo" firstAttribute="leading" secondItem="kYi-XU-qCb" secondAttribute="leading" id="BeU-6V-wD8"/>
-                            <constraint firstItem="AVn-u6-eM3" firstAttribute="leading" secondItem="945-Ph-8py" secondAttribute="leading" id="DjZ-oW-Sse"/>
-                            <constraint firstAttribute="centerX" secondItem="t3q-Iw-cd5" secondAttribute="centerX" id="GKD-RL-XYA"/>
-                            <constraint firstAttribute="centerX" secondItem="kYi-XU-qCb" secondAttribute="centerX" id="Mx9-Du-s5d"/>
-                            <constraint firstItem="2D1-a5-KBo" firstAttribute="top" secondItem="kYi-XU-qCb" secondAttribute="bottom" constant="58" id="Ubc-cW-JNU"/>
-                            <constraint firstItem="t3q-Iw-cd5" firstAttribute="top" secondItem="2D1-a5-KBo" secondAttribute="bottom" constant="72" id="Ufh-bG-EU7"/>
-                            <constraint firstAttribute="centerX" secondItem="AVn-u6-eM3" secondAttribute="centerX" id="W7J-HV-wFz"/>
-                            <constraint firstItem="t3q-Iw-cd5" firstAttribute="top" secondItem="945-Ph-8py" secondAttribute="bottom" constant="30" id="WHx-dO-n9w"/>
-                            <constraint firstAttribute="centerY" secondItem="kYi-XU-qCb" secondAttribute="centerY" id="bc0-CY-V3K"/>
-                            <constraint firstAttribute="centerX" secondItem="2D1-a5-KBo" secondAttribute="centerX" id="bxy-Gq-uYR"/>
-                            <constraint firstItem="t3q-Iw-cd5" firstAttribute="leading" secondItem="2D1-a5-KBo" secondAttribute="leading" id="fSg-1T-aYb"/>
-                            <constraint firstAttribute="centerY" secondItem="kYi-XU-qCb" secondAttribute="centerY" id="igA-ts-sh4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="t3q-Iw-cd5" secondAttribute="bottom" constant="108" id="mk5-ne-GCa"/>
-                            <constraint firstItem="AVn-u6-eM3" firstAttribute="top" secondItem="945-Ph-8py" secondAttribute="bottom" constant="25" id="oCl-6o-DY8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AVn-u6-eM3" secondAttribute="bottom" constant="66" id="qhY-WH-AMP"/>
-                            <constraint firstAttribute="centerX" secondItem="945-Ph-8py" secondAttribute="centerX" id="ysJ-xq-Mk7"/>
-                            <constraint firstItem="945-Ph-8py" firstAttribute="top" secondItem="2D1-a5-KBo" secondAttribute="bottom" constant="23" id="yz1-e3-Kl6"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cityLabel" destination="kYi-XU-qCb" id="7mK-df-OeJ"/>
-                        <outlet property="desLabel" destination="t3q-Iw-cd5" id="BvF-dS-mmv"/>
-                        <outlet property="desLabel2" destination="AVn-u6-eM3" id="5Rm-Oq-f2Y"/>
-                        <outlet property="rainLabel" destination="2D1-a5-KBo" id="ehi-aP-jpK"/>
-                        <outlet property="rainLabel2" destination="945-Ph-8py" id="JiK-hx-jgO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
