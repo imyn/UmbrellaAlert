@@ -4,6 +4,7 @@ import UIKit
 import CoreLocation
 
 
+
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     var location : CLLocation?

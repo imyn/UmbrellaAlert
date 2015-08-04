@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B184A931B6FE7390022ADA5 /* RainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184A921B6FE7390022ADA5 /* RainViewController.swift */; };
 		1B184AC51B7008CD0022ADA5 /* PFInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */; };
 		1B184AC71B7010E00022ADA5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */; };
-		1B184AC91B7016CA0022ADA5 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AC81B7016CA0022ADA5 /* Buttons.swift */; };
-		1B697FCC1B6150B200A5A805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B697FCB1B6150B200A5A805 /* ViewController.swift */; };
 		1BAF65921B66C3730094CE22 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAF65911B66C3730094CE22 /* Parse.framework */; };
 		1BAF65941B66C37B0094CE22 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAF65931B66C37B0094CE22 /* Bolts.framework */; };
 		1BAF65961B67EACB0094CE22 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAF65951B67EACB0094CE22 /* AudioToolbox.framework */; };
@@ -42,11 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B184A921B6FE7390022ADA5 /* RainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainViewController.swift; sourceTree = "<group>"; };
 		1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFInstallation.swift; sourceTree = "<group>"; };
 		1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		1B184AC81B7016CA0022ADA5 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		1B697FCB1B6150B200A5A805 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BAF65911B66C3730094CE22 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1BAF65931B66C37B0094CE22 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1BAF65951B67EACB0094CE22 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -134,10 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				1BCDA6C61B60393F0033D52F /* AppDelegate.swift */,
-				1B697FCB1B6150B200A5A805 /* ViewController.swift */,
 				1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */,
-				1B184A921B6FE7390022ADA5 /* RainViewController.swift */,
-				1B184AC81B7016CA0022ADA5 /* Buttons.swift */,
 				1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */,
 				1BCDA6CA1B60393F0033D52F /* Main.storyboard */,
 				1BCDA6CD1B60393F0033D52F /* Images.xcassets */,
@@ -277,10 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B184A931B6FE7390022ADA5 /* RainViewController.swift in Sources */,
-				1B697FCC1B6150B200A5A805 /* ViewController.swift in Sources */,
 				1B184AC71B7010E00022ADA5 /* WeatherViewController.swift in Sources */,
-				1B184AC91B7016CA0022ADA5 /* Buttons.swift in Sources */,
 				1BCDA6C71B60393F0033D52F /* AppDelegate.swift in Sources */,
 				1B184AC51B7008CD0022ADA5 /* PFInstallation.swift in Sources */,
 			);
