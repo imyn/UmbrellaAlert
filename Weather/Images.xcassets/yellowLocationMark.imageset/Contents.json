@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Water-32.png"
+      "filename" : "Marker-32.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Water-64.png"
+      "filename" : "Marker-50-2.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Water-100.png"
+      "filename" : "Marker-100-5.png"
     }
   ],
   "info" : {

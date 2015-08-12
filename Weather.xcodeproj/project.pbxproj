@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B184AC51B7008CD0022ADA5 /* PFInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */; };
 		1B184AC71B7010E00022ADA5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */; };
 		1BAF65921B66C3730094CE22 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAF65911B66C3730094CE22 /* Parse.framework */; };
 		1BAF65941B66C37B0094CE22 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAF65931B66C37B0094CE22 /* Bolts.framework */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFInstallation.swift; sourceTree = "<group>"; };
 		1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1BAF65911B66C3730094CE22 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1BAF65931B66C37B0094CE22 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			children = (
 				1BCDA6C61B60393F0033D52F /* AppDelegate.swift */,
 				1B184AC61B7010E00022ADA5 /* WeatherViewController.swift */,
-				1B184AC41B7008CD0022ADA5 /* PFInstallation.swift */,
 				1BCDA6CA1B60393F0033D52F /* Main.storyboard */,
 				1BCDA6CD1B60393F0033D52F /* Images.xcassets */,
 				1BCDA6CF1B60393F0033D52F /* LaunchScreen.xib */,
@@ -270,7 +267,6 @@
 			files = (
 				1B184AC71B7010E00022ADA5 /* WeatherViewController.swift in Sources */,
 				1BCDA6C71B60393F0033D52F /* AppDelegate.swift in Sources */,
-				1B184AC51B7008CD0022ADA5 /* PFInstallation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +408,7 @@
 				);
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Weather;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -429,7 +425,7 @@
 				);
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Weather;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -448,7 +444,7 @@
 				);
 				INFOPLIST_FILE = WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather.app/Weather";
 			};
 			name = Debug;
@@ -463,7 +459,7 @@
 				);
 				INFOPLIST_FILE = WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WeatherTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather.app/Weather";
 			};
 			name = Release;

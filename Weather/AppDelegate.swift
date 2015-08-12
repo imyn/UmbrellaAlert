@@ -7,7 +7,7 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-   // var pushQuery: PFQuery = PFInstallation.query()!
+  
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
@@ -23,16 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     application.registerUserNotificationSettings(settings)
     application.registerForRemoteNotifications()
     
-    return true
-
-    }
+        return true
+    
+}
     
 func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         var currentInstallation: PFInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.channels = ["global"]
         currentInstallation.saveInBackground()
-    }
+    
+}
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
         PFPush.handlePush(userInfo)

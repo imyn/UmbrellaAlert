@@ -1,5 +1,4 @@
 
-
 import UIKit
 import CoreLocation
 
@@ -7,20 +6,18 @@ import CoreLocation
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var umbrellaStatus: UIImageView!
+    
     var location : CLLocation?
-    var rainArray: [Double]!
-
-    
+    var rainArray: [Double] = []
+    var arrayStartPosition : Int = 0
+    var todayArray: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    var dayRecommendation: Int = 0
     let locationManager = CLLocationManager()
-
-//    
-//    @IBOutlet weak var cityLabel: UILabel!
-//    @IBOutlet weak var rainLabel: UILabel!
-//    @IBOutlet weak var rainLabel2: UILabel!
-//    @IBOutlet weak var desLabel: UILabel!
-//    @IBOutlet weak var desLabel2: UILabel!
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad(){ //Start the location manager
         super.viewDidLoad()
         
         self.locationManager.delegate = self
@@ -28,189 +25,166 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.distanceFilter  = 3000 // Must move at least 3km
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer // Accurate within a kilometer
         self.locationManager.startUpdatingLocation()
-    }
+        
+}
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
     }
     
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) { //Get user's current latitude and longtitude
         location = locations.last as? CLLocation
         println("\(location!.coordinate.latitude), \(location!.coordinate.longitude)")
         
         searchWeather()
     }
     
-    func searchWeather() {
+    func searchWeather(){ //Call weather API
         let urlPath = "http://api.openweathermap.org/data/2.5/forecast?lat=\(location!.coordinate.latitude)&lon=\(location!.coordinate.longitude)"
         let url = NSURL(string: urlPath)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!){(data, response, error) in
             dispatch_async(dispatch_get_main_queue(), {
-                self.displayWeather(data)
+                self.resetArrays()
+                self.organizeData(data)
+                self.updateTodayArray()
+                self.interpretData()
+                self.displayResult()
                 
             })
         }
         task.resume()
     }
     
+    func resetArrays(){
+        rainArray = []
+        todayArray = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        }
     
-    func displayWeather(weatherData: NSData)
-    {
-        //var rainArray: [Double]!
+    
+    func organizeData(weatherData: NSData){ //organize obtained data
+        
         var error: NSError?
         let jsonObject : AnyObject! = NSJSONSerialization.JSONObjectWithData(weatherData, options: nil, error: &error) as! NSDictionary
         
-        
-        //Return precipitation volume mm per 3 hours
-        if let rain0 = jsonObject["list"]!!.objectAtIndex(0).objectForKey("rain")?.objectForKey("3h") as? Double {
-            println(rain0)
-//            rainArray.append(rain0)
-//            println(rainArray)
+        if let name = jsonObject["city"]!!.objectForKey("name") as? String { //Display city name on viewcontroller
+            cityLabel.text =  name
+            // TODO: save to property instead and update display elsewhere
         }
-        
-        else {
-            println("no rain")
-            
-        }
-        
-        if let dtTime0 = jsonObject["list"]!!.objectAtIndex(0).objectForKey("dt_txt") as? String{
-            println(dtTime0)
-            
-        }
-        
-        if let rain1 = jsonObject["list"]!!.objectAtIndex(1).objectForKey("rain")?.objectForKey("3h") as? Double {
-            println(rain1)
-//            rainArray.append(rain1)
-//            println(rainArray)
-        }
-        else
-        {
-            println("no rain")
-        }
-        
-        if let dtTime = jsonObject["list"]!!.objectAtIndex(1).objectForKey("dt_txt") as? String{
-            println(dtTime)
-            
-        }
-        
-        if let rain2 = jsonObject["list"]!!.objectAtIndex(2).objectForKey("rain")?.objectForKey("3h") as? Double {
-            println(rain2)
-            //rainArray.append(rain2)
-            //println(rainArray)
-            
-        }
-        else {
-            println("no rain")
-        }
-        
-        if let dtTime2 = jsonObject["list"]!!.objectAtIndex(2).objectForKey("dt_txt") as? String {
-            println(dtTime2)
-        }
-        
-        if let rain3 = jsonObject["list"]!!.objectAtIndex(3).objectForKey("rain")?.objectForKey("3h") as? Double { println(rain3)
-//            rainArray.append(rain3)
-//            println(rainArray)
-        
-        }
-        
-        else {
-           println("no rain")
-        }
-        
-        if let dtTime3 = jsonObject["list"]!!.objectAtIndex(3).objectForKey("dt_txt") as? String {
-            println(dtTime3)
 
+        
+        for j in 0...7 { //grab first 8 entries of 3-hour rain forecast and put them in an array
+            if let rain = jsonObject["list"]!!.objectAtIndex(j).objectForKey("rain")?.objectForKey("3h") as? Double {
+                rainArray.append(rain)
+            }   // check if rain0...7 == "rain"
+                // if yes, append Double value
+                // else, append 0.0 as Double
+                
+            else {
+                rainArray.append(0.0)
+            }
         }
-        
-        if let rain4 = jsonObject["list"]!!.objectAtIndex(4).objectForKey("rain")?.objectForKey("3h") as? Double { println(rain4)
-//            rainArray.append(rain4)
-//            println(rainArray)
-        
-        }
-        
-        else {
-            println("no rain")
-        }
-        
-        if let dtTime4 = jsonObject["list"]!!.objectAtIndex(4).objectForKey("dt_txt") as? String {
-            println(dtTime4)
-        }
-        
-        if let rain5 = jsonObject["list"]!!.objectAtIndex(5).objectForKey("rain")?.objectForKey("3h") as? Double { println(rain5)
-//            rainArray.append(rain5)
-//            println(rainArray)
-        
-        }
-        
-        else{
-            println("no rain")
-        }
-        
-        if let dtTime5 = jsonObject["list"]!!.objectAtIndex(5).objectForKey("dt_txt") as? String {
-            println(dtTime5)
-        }
-        
-//        if let rain6 = jsonObject["list"]!!.objectAtIndex(6).objectForKey("rain")?.objectForKey("3h") as? Double { println("\(rain6)")
-//            rainArray.append(rain6)
-//            println(rainArray)
-        
-//        
-//        }
-//        
-//        else{
-//            println("no rain")
-//        }
-//        
-//        if let dtTime6 = jsonObject["list"]!!.objectAtIndex(6).objectForKey("dt_txt") as? String {
-//            println(dtTime6)
-//        }
-//        
-//        if let rain7 = jsonObject["list"]!!.objectAtIndex(7).objectForKey("rain")?.objectForKey("3h") as? Double { println(rain7)
-//            rainArray.append(rain7)
-//            println(rainArray)
-        
-//        }
-//        
-//        else{
-//            println("no rain")
-//        }
-//        
-//        if let dtTime7 = jsonObject["list"]!!.objectAtIndex(7).objectForKey("dt_txt") as? String {
-//            println(dtTime7)
-//        }
-//        
-//        if let rain8 = jsonObject["list"]!!.objectAtIndex(8).objectForKey("rain")?.objectForKey("3h") as? Double { println(rain8)
-//            rainArray.append(rain8)
-//            println(rainArray)
-        
-//        }
-//        
-//        else{
-//            println("no rain")
-//        }
-//        
-//        if let dtTime8 = jsonObject["list"]!!.objectAtIndex(8).objectForKey("dt_txt") as? String {
-//            println(dtTime8)
-//        }
-//        
-//    }
+        print("RainArray: ")
+        println(rainArray)
     
-//    func compareWeather() {
-//        var _basic: Double = 0.0
-//        var basic: Double {
-//            get{
-//                return _basic
-//            }
-//            set(new) {
-//                if new >=
-//            }
-//            
-//        }
-//       
-//    }
-   
+        //Get first dt from dtArray
+        if  let var firstDt = jsonObject["list"]!!.objectAtIndex(0).objectForKey("dt") as? Double {
+
+        //Take first dt in dtArray
+        let date = NSDate(timeIntervalSince1970: firstDt)
+        
+        //Convert dt to 24hour string format
+        let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "h" //A 1-12 based hour with at least 1 digit
+            dateFormatter.timeZone = NSTimeZone.localTimeZone() //Use current timezone
+            let localDate = dateFormatter.stringFromDate(date)
+           
+            println(localDate)
+            
+
+            //save to a property
+            var bucket = localDate.toInt()! / 3
+            
+            //Set obtained "bucket" as the new starting point
+            arrayStartPosition = bucket
+        
+            }
 }
     
+    
+    func updateTodayArray(){ //Use "bucket" as the starting point of todayArray
+        var startPosition = arrayStartPosition // use property value
+        var endPosition = 7 - startPosition
+    
+        for i in 0...endPosition {
+            let rainInt = rainArray[i]
+            todayArray[startPosition] = rainInt
+            startPosition += 1
+            
+            }
+       
+        print("todayArray: ")
+        println(todayArray)
+        
+}
+        
+    
+    func interpretData() {
+    
+        
+        for i in 0...7 {
+            var rain: Double = todayArray[i]
+            var localRecommendation: Int = 0
+            
+            if rain <= 2.00 {
+                
+                localRecommendation = 0
+                
+            }
+            
+            else if rain > 2.00 && rain <= 5.00 {
+                
+                localRecommendation = 1
+                            }
+            
+            else
+            {
+               
+                localRecommendation = 2
+                
+            }
+            
+            if localRecommendation > dayRecommendation {
+                dayRecommendation = localRecommendation
+            }
+            
+        }
+}
 
+    
+    func displayResult(){
+        
+        switch dayRecommendation {
+                    
+        case 0:
+                println("No Umbrella")
+                self.umbrellaStatus.image = UIImage(named: "noUmbrella")
+
+        case 1:
+                println("Maybe Umbrella")
+              
+                self.umbrellaStatus.image = UIImage(named: "moderateRain")
+            
+        case 2:
+                println("Umbrella Alert!")
+
+                self.umbrellaStatus.image = UIImage(named: "heavyRain")
+            
+        default:
+                print(self.dayRecommendation)
+            
+
+        
+}
+}
 }

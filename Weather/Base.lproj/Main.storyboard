@@ -7,75 +7,74 @@
         <!--Weather View Controller-->
         <scene sceneID="SqC-sl-wFM">
             <objects>
-                <viewController id="zdg-in-8EE" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstView" id="zdg-in-8EE" customClass="WeatherViewController" customModule="Weather" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oEK-fF-m7H"/>
                         <viewControllerLayoutGuide type="bottom" id="lNb-90-sQr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zez-I7-W39">
+                    <view key="view" contentMode="scaleAspectFit" id="Zez-I7-W39">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UmbrellaAlert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEt-yC-VEs">
-                                <rect key="frame" x="211" y="33" width="177" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2g-Lv-ag2">
+                                <rect key="frame" x="143" y="239" width="314" height="341"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="341" id="imY-hZ-GNx"/>
+                                    <constraint firstAttribute="width" constant="314" id="ui6-im-cQ7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOP-TX-feW">
+                                <rect key="frame" x="244" y="60" width="237" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="p50-Ts-vpM"/>
+                                    <constraint firstAttribute="width" constant="237" id="wGe-ns-mSV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="45"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UmbrellaPerson" translatesAutoresizingMaskIntoConstraints="NO" id="Ooy-jg-5H2">
-                                <rect key="frame" x="180" y="202" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowLocationMark" translatesAutoresizingMaskIntoConstraints="NO" id="4QI-7z-y4c">
+                                <rect key="frame" x="191" y="60" width="45" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ZYa-fD-06k"/>
-                                    <constraint firstAttribute="width" constant="240" id="r01-JC-1Mf"/>
+                                    <constraint firstAttribute="width" constant="45" id="B07-YF-wtp"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.019607843137254902" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.02266686855" green="0.020008756700000001" blue="0.13478535350000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lNb-90-sQr" firstAttribute="top" secondItem="GEt-yC-VEs" secondAttribute="bottom" constant="546" id="JzE-tN-sK0"/>
-                            <constraint firstAttribute="centerX" secondItem="Ooy-jg-5H2" secondAttribute="centerX" id="aL5-KE-hSa"/>
-                            <constraint firstAttribute="centerX" secondItem="GEt-yC-VEs" secondAttribute="centerX" id="aXA-al-ucj"/>
-                            <constraint firstItem="GEt-yC-VEs" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="13" id="x50-Vc-XgS"/>
-                            <constraint firstItem="lNb-90-sQr" firstAttribute="top" secondItem="Ooy-jg-5H2" secondAttribute="bottom" constant="270" id="yig-pH-zr7"/>
+                            <constraint firstItem="4QI-7z-y4c" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="32" id="6BI-z9-R6X"/>
+                            <constraint firstItem="4QI-7z-y4c" firstAttribute="bottom" secondItem="GOP-TX-feW" secondAttribute="bottom" constant="-8" id="7Z1-3z-wQ6"/>
+                            <constraint firstItem="X2g-Lv-ag2" firstAttribute="centerX" secondItem="Zez-I7-W39" secondAttribute="centerX" id="9Aq-RN-8a6"/>
+                            <constraint firstItem="GOP-TX-feW" firstAttribute="bottom" secondItem="4QI-7z-y4c" secondAttribute="bottom" id="DT4-e7-jbd"/>
+                            <constraint firstItem="lNb-90-sQr" firstAttribute="top" secondItem="X2g-Lv-ag2" secondAttribute="bottom" constant="20" id="GG0-dS-Zbt"/>
+                            <constraint firstItem="GOP-TX-feW" firstAttribute="leading" secondItem="4QI-7z-y4c" secondAttribute="trailing" constant="8" symbolic="YES" id="LHD-Ig-FPT"/>
+                            <constraint firstItem="GOP-TX-feW" firstAttribute="top" secondItem="4QI-7z-y4c" secondAttribute="top" id="YvK-ui-xE8"/>
+                            <constraint firstItem="GOP-TX-feW" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="40" id="gis-TI-GuM"/>
+                            <constraint firstAttribute="centerY" secondItem="GOP-TX-feW" secondAttribute="centerY" constant="214" id="jwv-Qw-ReL"/>
+                            <constraint firstItem="4QI-7z-y4c" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="32" id="o0d-JH-IMN"/>
+                            <constraint firstItem="GOP-TX-feW" firstAttribute="centerX" secondItem="X2g-Lv-ag2" secondAttribute="centerX" constant="62.5" id="sgJ-Pa-aHU"/>
+                            <constraint firstAttribute="centerX" secondItem="GOP-TX-feW" secondAttribute="centerX" constant="-62.5" id="weg-dG-Ohz"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6BI-z9-R6X"/>
+                                <exclude reference="7Z1-3z-wQ6"/>
+                                <exclude reference="o0d-JH-IMN"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="GOP-TX-feW" id="Wbn-ml-FPY"/>
+                        <outlet property="umbrellaStatus" destination="X2g-Lv-ag2" id="SoW-WZ-fCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhH-ro-cJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="293"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="DisplayWeather" id="BYZ-38-t0r" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69B-hd-nY3">
-                                <rect key="frame" x="263" y="290" width="75.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="69B-hd-nY3" secondAttribute="centerX" id="U7w-i7-Ugv"/>
-                            <constraint firstAttribute="centerY" secondItem="69B-hd-nY3" secondAttribute="centerY" id="uLB-eH-40j"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="204" y="293"/>
+            <point key="canvasLocation" x="-408" y="284"/>
         </scene>
     </scenes>
     <resources>
-        <image name="UmbrellaPerson" width="1200" height="1200"/>
+        <image name="yellowLocationMark" width="32" height="32"/>
     </resources>
 </document>
