@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     var location : CLLocation?
     var rainArray: [Double] = []
     var arrayStartPosition : Int = 0
-    var todayArray: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    var todayArray: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] //8 entries of 3-hour rain forecast
     var dayRecommendation: Int = 0
     let locationManager = CLLocationManager()
     
@@ -25,6 +25,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.distanceFilter  = 3000 // Must move at least 3km
         self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer // Accurate within a kilometer
         self.locationManager.startUpdatingLocation()
+        cityLabel.hidden = false
         
 }
     
@@ -32,9 +33,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) { //Get user's current latitude and longtitude
-        location = locations.last as? CLLocation
+    //Get user's current latitude and longtitude by using CoreLocation manager
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {         location = locations.last as? CLLocation
         println("\(location!.coordinate.latitude), \(location!.coordinate.longitude)")
         
         searchWeather()
@@ -53,12 +53,12 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 
             })
         }
-        task.resume()
+        task.resume() //Without this line, the task session won't begin.
     }
     
     func resetArrays(){
         rainArray = []
-        todayArray = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        todayArray = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] //8 entries of 3-hour rain forecast
         }
     
     
@@ -69,7 +69,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         
         if let name = jsonObject["city"]!!.objectForKey("name") as? String { //Display city name on viewcontroller
             cityLabel.text =  name
-            // TODO: save to property instead and update display elsewhere
+
         }
 
         
@@ -87,7 +87,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         print("RainArray: ")
         println(rainArray)
     
-        //Get first dt from dtArray
+        //Get first dt from weather API JSON response
         if  let var firstDt = jsonObject["list"]!!.objectAtIndex(0).objectForKey("dt") as? Double {
 
         //Take first dt in dtArray
@@ -102,7 +102,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             println(localDate)
             
 
-            //save to a property
+            //Save to a property
+            //To use the integer as an index of todayArray
+            //Divide by 3 to turn 24-hour into 8 buckets
             var bucket = localDate.toInt()! / 3
             
             //Set obtained "bucket" as the new starting point
@@ -112,11 +114,12 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 }
     
     
-    func updateTodayArray(){ //Use "bucket" as the starting point of todayArray
-        var startPosition = arrayStartPosition // use property value
-        var endPosition = 7 - startPosition
-    
-        for i in 0...endPosition {
+    func updateTodayArray(){ //Set "bucket" as the starting point of todayArray
+        var startPosition = arrayStartPosition 
+        var endPosition = 7 - startPosition //Reversing the index of an array
+        
+        //Why am I updating the for loop?
+        for i in 0...endPosition { //Iterates an object in index to find right place
             let rainInt = rainArray[i]
             todayArray[startPosition] = rainInt
             startPosition += 1
@@ -129,8 +132,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 }
         
     
-    func interpretData() {
-    
+    func interpretData() { //Iterates the objects in updated todayArray
         
         for i in 0...7 {
             var rain: Double = todayArray[i]
@@ -161,7 +163,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         }
 }
 
-    
+    //Use switch statement to execute certain umbrella conditions for
     func displayResult(){
         
         switch dayRecommendation {

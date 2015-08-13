@@ -23,49 +23,46 @@
                                     <constraint firstAttribute="width" constant="314" id="ui6-im-cQ7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOP-TX-feW">
-                                <rect key="frame" x="244" y="60" width="237" height="52"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowLocationMark" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-xX-IAS">
+                                <rect key="frame" x="203" y="67" width="61" height="82"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="p50-Ts-vpM"/>
-                                    <constraint firstAttribute="width" constant="237" id="wGe-ns-mSV"/>
+                                    <constraint firstAttribute="height" constant="82" id="V9U-tN-NZb"/>
+                                    <constraint firstAttribute="width" constant="61" id="xiw-69-bS2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="45"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-UG-cFE">
+                                <rect key="frame" x="265" y="40" width="200" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UBL-W3-XfR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowLocationMark" translatesAutoresizingMaskIntoConstraints="NO" id="4QI-7z-y4c">
-                                <rect key="frame" x="191" y="60" width="45" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="B07-YF-wtp"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.023529411764705882" green="0.019607843137254902" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.02266686855" green="0.020008756700000001" blue="0.13478535350000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4QI-7z-y4c" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="32" id="6BI-z9-R6X"/>
-                            <constraint firstItem="4QI-7z-y4c" firstAttribute="bottom" secondItem="GOP-TX-feW" secondAttribute="bottom" constant="-8" id="7Z1-3z-wQ6"/>
-                            <constraint firstItem="X2g-Lv-ag2" firstAttribute="centerX" secondItem="Zez-I7-W39" secondAttribute="centerX" id="9Aq-RN-8a6"/>
-                            <constraint firstItem="GOP-TX-feW" firstAttribute="bottom" secondItem="4QI-7z-y4c" secondAttribute="bottom" id="DT4-e7-jbd"/>
-                            <constraint firstItem="lNb-90-sQr" firstAttribute="top" secondItem="X2g-Lv-ag2" secondAttribute="bottom" constant="20" id="GG0-dS-Zbt"/>
-                            <constraint firstItem="GOP-TX-feW" firstAttribute="leading" secondItem="4QI-7z-y4c" secondAttribute="trailing" constant="8" symbolic="YES" id="LHD-Ig-FPT"/>
-                            <constraint firstItem="GOP-TX-feW" firstAttribute="top" secondItem="4QI-7z-y4c" secondAttribute="top" id="YvK-ui-xE8"/>
-                            <constraint firstItem="GOP-TX-feW" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="40" id="gis-TI-GuM"/>
-                            <constraint firstAttribute="centerY" secondItem="GOP-TX-feW" secondAttribute="centerY" constant="214" id="jwv-Qw-ReL"/>
-                            <constraint firstItem="4QI-7z-y4c" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="32" id="o0d-JH-IMN"/>
-                            <constraint firstItem="GOP-TX-feW" firstAttribute="centerX" secondItem="X2g-Lv-ag2" secondAttribute="centerX" constant="62.5" id="sgJ-Pa-aHU"/>
-                            <constraint firstAttribute="centerX" secondItem="GOP-TX-feW" secondAttribute="centerX" constant="-62.5" id="weg-dG-Ohz"/>
+                            <constraint firstItem="qvR-UG-cFE" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="20" id="4wT-hN-pJu"/>
+                            <constraint firstAttribute="bottom" secondItem="X2g-Lv-ag2" secondAttribute="bottom" constant="20" symbolic="YES" id="535-Eh-U0N"/>
+                            <constraint firstItem="X2g-Lv-ag2" firstAttribute="top" secondItem="qvR-UG-cFE" secondAttribute="bottom" constant="38" id="5JK-CH-Er7"/>
+                            <constraint firstItem="X2g-Lv-ag2" firstAttribute="centerX" secondItem="Zez-I7-W39" secondAttribute="centerX" id="Kh4-CK-gLw"/>
+                            <constraint firstAttribute="centerY" secondItem="xr1-xX-IAS" secondAttribute="centerY" id="NwO-NH-O4A"/>
+                            <constraint firstItem="qvR-UG-cFE" firstAttribute="leading" secondItem="xr1-xX-IAS" secondAttribute="trailing" constant="1" id="QTt-d3-wlM"/>
+                            <constraint firstItem="qvR-UG-cFE" firstAttribute="centerX" secondItem="X2g-Lv-ag2" secondAttribute="centerX" constant="65" id="b4P-tW-MrR"/>
+                            <constraint firstAttribute="centerY" secondItem="xr1-xX-IAS" secondAttribute="centerY" constant="194" id="iT2-lF-atb"/>
+                            <constraint firstItem="xr1-xX-IAS" firstAttribute="top" secondItem="oEK-fF-m7H" secondAttribute="bottom" constant="47" id="rd5-sk-9ID"/>
+                            <constraint firstAttribute="centerY" secondItem="xr1-xX-IAS" secondAttribute="centerY" constant="192" id="sQM-Rw-wEm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6BI-z9-R6X"/>
-                                <exclude reference="7Z1-3z-wQ6"/>
-                                <exclude reference="o0d-JH-IMN"/>
+                                <exclude reference="NwO-NH-O4A"/>
+                                <exclude reference="iT2-lF-atb"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="cityLabel" destination="GOP-TX-feW" id="Wbn-ml-FPY"/>
+                        <outlet property="cityLabel" destination="qvR-UG-cFE" id="NxA-ce-u3Q"/>
                         <outlet property="umbrellaStatus" destination="X2g-Lv-ag2" id="SoW-WZ-fCd"/>
                     </connections>
                 </viewController>
